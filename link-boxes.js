@@ -1,8 +1,8 @@
-const regExp = /\[(.*)\]\((.*):(.*)\|(.*)\)/;
+const regExp = /\[(.*)\]\((.*):(.*)\|(.*)\)/g;
 const divSelector = ".link-boxes";
 
 document.querySelector(divSelector).innerHTML =
-document.querySelector(divSelector).innerText
+document.querySelector(divSelector).innerHTML
 .replace(regExp,
 '<a href="$2" class="link-box">' +
 	'<div class="avatar">' +
