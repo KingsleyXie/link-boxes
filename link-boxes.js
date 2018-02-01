@@ -11,17 +11,20 @@ function filter(m, p1, p2, p3) {
 	return '[' + p1 + '](' + p2 + '+' + p3 + '|' + t + ')';
 }
 
-document.querySelector(divSelector).innerHTML =
-document.querySelector(divSelector).innerHTML
-.replace(filterReg, filter);
+document.querySelectorAll(divSelector)
+.forEach(function(content) {
+	content.innerHTML = content.innerHTML
+	.replace(filterReg, filter);
+});
 
-document.querySelector(divSelector).innerHTML =
-document.querySelector(divSelector).innerHTML
-.replace(replaceReg,
-'<a href="$2" class="link-box">' +
+document.querySelectorAll(divSelector)
+.forEach(function(content) {
+	content.innerHTML = content.innerHTML
+	.replace(replaceReg,
+	'<a href="$2" class="link-box">' +
 	'<div class="avatar">' +
 		'<img src="$3" alt="$4">' +
 	'</div>' +
 	'<div class="nickname">$1</div>' +
-'</a>'
-);
+	'</a>');
+});
