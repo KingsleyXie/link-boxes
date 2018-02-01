@@ -1,30 +1,24 @@
-const filterReg = /\[(.*)\]\((.*)\+([^\|]*)\)/g;
-const replaceReg = /\[(.*)\]\((.*)\+(.*)\|(.*)\)/g;
+const replaceReg = /\[(.*)\]\((.*)\+(.*)\)/g;
 const divSelector = ".link-boxes";
 
-function filter(m, p1, p2, p3) {
-	//Get the short path of image
-	var t = p3.split('/')
-	t = t[t.length - 1];
+function replacer(m, p1, p2, p3) {
+	//Get the image file name
+	var img = p3.split('/')
+	img = img[img.length - 1];
 
-	//Rejoin the string with an `alt` value
-	return '[' + p1 + '](' + p2 + '+' + p3 + '|' + t + ')';
+	//Return the generated HTML code
+	var box =
+	'<a href="' + p2 + '" class="link-box">' +
+		'<div class="avatar">' +
+			'<img src="' + p3 + '" alt="' + img + '">' +
+		'</div>' +
+		'<div class="nickname">' + p1 + '</div>' +
+	'</a>'
+	return box;
 }
 
 document.querySelectorAll(divSelector)
 .forEach(function(content) {
 	content.innerHTML = content.innerHTML
-	.replace(filterReg, filter);
-});
-
-document.querySelectorAll(divSelector)
-.forEach(function(content) {
-	content.innerHTML = content.innerHTML
-	.replace(replaceReg,
-	'<a href="$2" class="link-box">' +
-	'<div class="avatar">' +
-		'<img src="$3" alt="$4">' +
-	'</div>' +
-	'<div class="nickname">$1</div>' +
-	'</a>');
+	.replace(replaceReg, replacer);
 });
