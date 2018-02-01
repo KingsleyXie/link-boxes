@@ -1,13 +1,9 @@
 ## Brief Introduction
 This is a responsive link-boxes snippet inspired by and modified from Typecho's link-box, initially used for the links page of friends on my blog. Actually it can also be used as an index page or other situations which requires a list of links.
 
-Demo is shown at [https://demos.kingsleyxie.cn/link-boxes/](https://demos.kingsleyxie.cn/link-boxes/), and here is a preview picture on PC side:
+Demo is shown at [https://demos.kingsleyxie.cn/link-boxes/](https://demos.kingsleyxie.cn/link-boxes/), the [Alpha version](https://github.com/KingsleyXie/NaiveProjects/tree/c3c13f9/Snippets/link-boxes/) wrote with both CSS and JavaScript is also shown [here](https://demos.kingsleyxie.cn/link-boxes-alpha/), but it is deprecated since the CSS-only version now has a better performance.
 
-![PC-Preview](./demo/preview/pc.png)
-
-*P.S. Don't care about the icons and nicknames = =*
-
-The [Alpha version](https://github.com/KingsleyXie/NaiveProjects/tree/c3c13f9/Snippets/link-boxes/) wrote with both CSS and JavaScript is also shown [here](https://demos.kingsleyxie.cn/link-boxes-alpha/), but it is deprecated since the CSS-only version now has a better performance.
+More infomation about this repository can be found from this [blog](https://kingsleyxie.cn/implementation-of-link-boxes) if you are interested.
 
 ## Usage
 ### With Pure HTML Code
@@ -35,10 +31,10 @@ Besides the CSS file `./link-boxes.css`, add the Javascript code inside [`./link
 ```html
 <div class="link-boxes">
     <!-- Standard Format For Each -->
-    [nickname](link~~avatar|alt)
+    [nickname](link+avatar|alt)
 
     <!-- Or Without `alt` -->
-    [nickname](link~~avatar)
+    [nickname](link+avatar)
 </div>
 ```
 
@@ -48,9 +44,9 @@ For example:
 
 ```html
 <div class="link-boxes">
-    [Google](https://www.google.com~~https://balabala.png|google)
+    [Google](https://www.google.com+https://balabala.png|google)
 
-    [Google](https://www.google.com~~https://balabala.png)
+    [Google](https://www.google.com+https://balabala.png)
 </div>
 ```
 

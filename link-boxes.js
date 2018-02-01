@@ -1,10 +1,10 @@
-const filterReg = /\[(.*)\]\((.*)~~([^\|]*)\)/g;
-const replaceReg = /\[(.*)\]\((.*)~~(.*)\|(.*)\)/g;
+const filterReg = /\[(.*)\]\((.*)\+([^\|]*)\)/g;
+const replaceReg = /\[(.*)\]\((.*)\+(.*)\|(.*)\)/g;
 const divSelector = ".link-boxes";
 
 document.querySelector(divSelector).innerHTML =
 document.querySelector(divSelector).innerHTML
-.replace(filterReg, '[$1]($2~~$3|avatar)');
+.replace(filterReg, '[$1]($2+$3|avatar)');
 
 document.querySelector(divSelector).innerHTML =
 document.querySelector(divSelector).innerHTML
