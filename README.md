@@ -50,7 +50,7 @@ For example:
 </div>
 ```
 
-Moreover, you can choose not to write the AVATAR-ALT, the `alt` value will be automatically set to `avatar`.
+Moreover, you can choose not to write the AVATAR-ALT, the `alt` value will be automatically set to the short path of avatart address.
 
 ## Customization
 If you are not satisfied with the image size or other style of these link boxes, or want to customize your own link boxes, you can simply change the corresponding values inside [`./link-boxes.css`](./link-boxes.css). By default, value of the core variables are:

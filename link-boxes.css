@@ -6,7 +6,7 @@ html {
 
 @media (max-width: 520px) {
 	html {
-		--img-size: calc(50vw - 22.4px) !important;
+		--img-size: calc(45vw - 22.4px) !important;
 	}
 }
 
